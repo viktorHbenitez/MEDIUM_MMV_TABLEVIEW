@@ -14,6 +14,9 @@
 		CD509D0C24EF2D8F009A8BBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD509D0B24EF2D8F009A8BBC /* Assets.xcassets */; };
 		CD509D0F24EF2D8F009A8BBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD509D0D24EF2D8F009A8BBC /* LaunchScreen.storyboard */; };
 		CD509D1A24EF2D8F009A8BBC /* MVVM_TableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD509D1924EF2D8F009A8BBC /* MVVM_TableViewUITests.swift */; };
+		CD509D2824EF2F1C009A8BBC /* BSEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD509D2724EF2F1C009A8BBC /* BSEmployee.swift */; };
+		CD509D2A24EF2F2E009A8BBC /* BSEmployeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD509D2924EF2F2E009A8BBC /* BSEmployeeData.swift */; };
+		CD509D2D24EF36CB009A8BBC /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD509D2C24EF36CB009A8BBC /* WebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		CD509D1524EF2D8F009A8BBC /* MVVM_TableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVM_TableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD509D1924EF2D8F009A8BBC /* MVVM_TableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_TableViewUITests.swift; sourceTree = "<group>"; };
 		CD509D1B24EF2D8F009A8BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD509D2724EF2F1C009A8BBC /* BSEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSEmployee.swift; sourceTree = "<group>"; };
+		CD509D2924EF2F2E009A8BBC /* BSEmployeeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSEmployeeData.swift; sourceTree = "<group>"; };
+		CD509D2C24EF36CB009A8BBC /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +87,10 @@
 			children = (
 				CD509D0224EF2D8D009A8BBC /* AppDelegate.swift */,
 				CD509D0424EF2D8D009A8BBC /* SceneDelegate.swift */,
-				CD509D0624EF2D8D009A8BBC /* ViewController.swift */,
+				CD509D2B24EF36BD009A8BBC /* Service */,
+				CD509D2624EF2EE4009A8BBC /* View */,
+				CD509D2524EF2EDE009A8BBC /* ViewModel */,
+				CD509D2424EF2ED9009A8BBC /* Model */,
 				CD509D0824EF2D8D009A8BBC /* Main.storyboard */,
 				CD509D0B24EF2D8F009A8BBC /* Assets.xcassets */,
 				CD509D0D24EF2D8F009A8BBC /* LaunchScreen.storyboard */,
@@ -97,6 +106,38 @@
 				CD509D1B24EF2D8F009A8BBC /* Info.plist */,
 			);
 			path = MVVM_TableViewUITests;
+			sourceTree = "<group>";
+		};
+		CD509D2424EF2ED9009A8BBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD509D2724EF2F1C009A8BBC /* BSEmployee.swift */,
+				CD509D2924EF2F2E009A8BBC /* BSEmployeeData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD509D2524EF2EDE009A8BBC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CD509D2624EF2EE4009A8BBC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD509D0624EF2D8D009A8BBC /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD509D2B24EF36BD009A8BBC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CD509D2C24EF36CB009A8BBC /* WebService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +241,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD509D2D24EF36CB009A8BBC /* WebService.swift in Sources */,
+				CD509D2824EF2F1C009A8BBC /* BSEmployee.swift in Sources */,
+				CD509D2A24EF2F2E009A8BBC /* BSEmployeeData.swift in Sources */,
 				CD509D0724EF2D8D009A8BBC /* ViewController.swift in Sources */,
 				CD509D0324EF2D8D009A8BBC /* AppDelegate.swift in Sources */,
 				CD509D0524EF2D8D009A8BBC /* SceneDelegate.swift in Sources */,
@@ -372,7 +416,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bancoazteca.bancadigital.MVVM-TableView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -390,7 +434,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bancoazteca.bancadigital.MVVM-TableView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

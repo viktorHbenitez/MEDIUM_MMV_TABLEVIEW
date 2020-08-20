@@ -12,9 +12,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
 
+        let objWebservice_ws = APIService()
+        objWebservice_ws.getEmployees()
+    }
 
 }
 
