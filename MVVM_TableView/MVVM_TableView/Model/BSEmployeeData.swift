@@ -10,16 +10,10 @@ import Foundation
 
 
 struct  BSEmployeeData : Decodable {
-    
-    /* var id : String
-    var employee_name : String
-    var employee_salary : Double
-    var employee_age : Int
-    var profile_image : String*/
-    var Id : Int
+    var Id : String
     var strName : String
-    var strSalary : Int
-    var strAge : Int
+    var strSalary : String
+    var strAge : String
     var strImage : String
     
     
@@ -27,7 +21,7 @@ struct  BSEmployeeData : Decodable {
         case Id = "id"
         case strName  = "employee_name"
         case strSalary = "employee_salary"
-        case strAge = "employee_age"
+        case strAge   = "employee_age"
         case strImage = "profile_image"
     }
    
