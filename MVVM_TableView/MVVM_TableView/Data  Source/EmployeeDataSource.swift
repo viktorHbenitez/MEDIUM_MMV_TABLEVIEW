@@ -29,9 +29,30 @@ class EmployeeDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     print("Cell selected", indexPath.row)
   }
   
-  
-  
-  
-  
-  
 }
+
+
+
+
+/*
+# <#Title#>
+
+![Gif](../branchName/assets/sketch3.gif)
+![workflow](https://github.com/viktorHbenitez/projectName/blob/master/Sketch/sketch1.png)
+
+## 3. Expandable Header UITableView
+
+[<#Reference#>] (https://<#nameofThePage#>)
+
+### Steps
+ 
+ 1. Create a new custom cell `<#Code#>` an communicate with the TableView
+ 1.1 Create a link father `<#Code#>`
+ 1.2 Set in `<#Code#>`
+ 
+```swift
+  <#Code#>
+```
+**<#Bold#>**
+
+ */
