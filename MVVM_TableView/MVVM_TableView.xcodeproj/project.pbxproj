@@ -17,6 +17,8 @@
 		CD509D2824EF2F1C009A8BBC /* BSEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD509D2724EF2F1C009A8BBC /* BSEmployee.swift */; };
 		CD509D2A24EF2F2E009A8BBC /* BSEmployeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD509D2924EF2F2E009A8BBC /* BSEmployeeData.swift */; };
 		CD509D2D24EF36CB009A8BBC /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD509D2C24EF36CB009A8BBC /* WebService.swift */; };
+		E453E25E24F32A17002683BD /* EmployeesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E453E25D24F32A17002683BD /* EmployeesViewModel.swift */; };
+		E453E26124F32A69002683BD /* EmployeeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E453E26024F32A69002683BD /* EmployeeDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		CD509D2724EF2F1C009A8BBC /* BSEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSEmployee.swift; sourceTree = "<group>"; };
 		CD509D2924EF2F2E009A8BBC /* BSEmployeeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSEmployeeData.swift; sourceTree = "<group>"; };
 		CD509D2C24EF36CB009A8BBC /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		E453E25D24F32A17002683BD /* EmployeesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmployeesViewModel.swift; path = MVVM_TableView/DataSource/EmployeesViewModel.swift; sourceTree = SOURCE_ROOT; };
+		E453E26024F32A69002683BD /* EmployeeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			children = (
 				CD509D0224EF2D8D009A8BBC /* AppDelegate.swift */,
 				CD509D0424EF2D8D009A8BBC /* SceneDelegate.swift */,
+				E453E25F24F32A58002683BD /* Data  Source */,
 				CD509D2B24EF36BD009A8BBC /* Service */,
 				CD509D2624EF2EE4009A8BBC /* View */,
 				CD509D2524EF2EDE009A8BBC /* ViewModel */,
@@ -120,6 +125,7 @@
 		CD509D2524EF2EDE009A8BBC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E453E25D24F32A17002683BD /* EmployeesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -138,6 +144,14 @@
 				CD509D2C24EF36CB009A8BBC /* WebService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		E453E25F24F32A58002683BD /* Data  Source */ = {
+			isa = PBXGroup;
+			children = (
+				E453E26024F32A69002683BD /* EmployeeDataSource.swift */,
+			);
+			path = "Data  Source";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,8 +258,10 @@
 				CD509D2D24EF36CB009A8BBC /* WebService.swift in Sources */,
 				CD509D2824EF2F1C009A8BBC /* BSEmployee.swift in Sources */,
 				CD509D2A24EF2F2E009A8BBC /* BSEmployeeData.swift in Sources */,
+				E453E25E24F32A17002683BD /* EmployeesViewModel.swift in Sources */,
 				CD509D0724EF2D8D009A8BBC /* ViewController.swift in Sources */,
 				CD509D0324EF2D8D009A8BBC /* AppDelegate.swift in Sources */,
+				E453E26124F32A69002683BD /* EmployeeDataSource.swift in Sources */,
 				CD509D0524EF2D8D009A8BBC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
