@@ -8,23 +8,28 @@
 
 import UIKit
 
-protocol EmployeeListInterface {
-    var iSection        :  Int { get }
-    var bindEmployee    : (()->())? {get set}
-    var arrData         : [BSEmployeeData]? {get}
 
-    func numberOfRowsInSection(_ tblView : UITableView,
-                               _ section : Int) -> Int
-    func cellForRowAt(_ tblView : UITableView,
-                      _ indexPath : IndexPath) -> UITableViewCell
+protocol TableViewInterface {
+  var iSection        :  Int { get }
+  func setup(_ tblView : UITableView)
+  func numberOfRowsInSection(_ tblView : UITableView,
+                             _ section : Int) -> Int
+  func cellForRowAt(_ tblView : UITableView,
+                    _ indexPath : IndexPath,
+                    _ strCellIdentifier : String) -> UITableViewCell
 }
+
+protocol EmployeeInterface{
+  var bindEmployee    : (()->())? {get set}
+  var arrData         : [BSEmployeeData]? {get}
+}
+
+protocol EmployeeListInterface : TableViewInterface, EmployeeInterface {}
 
 
 class EmployeesViewModel :EmployeeListInterface {
-   
-    private let strCellIdentifier =  "cell"
+ 
     private let service : ServiceInterface
-    
     var iSection: Int = 1
 
     var arrData : [BSEmployeeData]?{
@@ -36,13 +41,11 @@ class EmployeesViewModel :EmployeeListInterface {
     
     var bindEmployee: (()->())?
     
-    
     init( _ service : ServiceInterface) {
         self.service = service
         executeService()
         
     }
-    
     
     func executeService(){
         service.getEmployees { [weak self] bsEmployee in
@@ -50,6 +53,11 @@ class EmployeesViewModel :EmployeeListInterface {
         }
     }
     
+  func setup(_ tblView : UITableView){
+    tblView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+  }
+  
+
     func numberOfRowsInSection(_ tblView: UITableView,
                                _ section: Int) -> Int {
         switch section {
@@ -61,15 +69,15 @@ class EmployeesViewModel :EmployeeListInterface {
     }
     
     func cellForRowAt(_ tblView: UITableView,
-                      _ indexPath: IndexPath) -> UITableViewCell {
+                      _ indexPath: IndexPath,
+                      _ strCellIdentifier : String) -> UITableViewCell {
         
         switch indexPath.section {
         case 0:
             
             let cell = tblView.dequeueReusableCell(withIdentifier: strCellIdentifier, for: indexPath)
             
-            let bsData = arrData?[indexPath.row]
-            
+            let bsData = getObjModel(from: indexPath.row)
             cell.textLabel?.text = bsData?.strName
             
             return cell
@@ -77,6 +85,10 @@ class EmployeesViewModel :EmployeeListInterface {
             return UITableViewCell()
         }
     }
+  
+  func getObjModel(from row : Int) -> BSEmployeeData?{
+    return arrData?[row]
+  }
     
 }
 

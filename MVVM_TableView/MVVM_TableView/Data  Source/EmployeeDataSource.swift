@@ -12,6 +12,7 @@ import UIKit
 class EmployeeDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
  
   private var bsModelView : EmployeeListInterface
+  let strIdentifier = "cell"
   
   init(_ bsDataModelView : EmployeeListInterface) {
     bsModelView = bsDataModelView
@@ -22,7 +23,7 @@ class EmployeeDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return bsModelView.cellForRowAt(tableView, indexPath)
+    return bsModelView.cellForRowAt(tableView, indexPath, strIdentifier)
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

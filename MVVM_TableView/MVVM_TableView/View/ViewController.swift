@@ -11,32 +11,41 @@ import UIKit
 class ViewController: UIViewController {
   
   private var bsEmployeeViewModel : EmployeeListInterface?
-  private var bsDataSource : EmployeeDataSource?
+  private var dataSourceGeneric : GenericDataSource<UITableViewCell, BSEmployeeData>?
   
   @IBOutlet weak var tblTableView : UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    tblTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    
+    setupGenericData()
+  }
+  
+  func setupGenericData(){
     bsEmployeeViewModel = EmployeesViewModel(APIService())
-    setupDataSource()
-    invokeBind()
-  }
-  
-  func setupDataSource(){
-    
-    bsDataSource = EmployeeDataSource(EmployeesViewModel(APIService()))
-    self.tblTableView.dataSource = bsDataSource
-    self.tblTableView.delegate = bsDataSource
-    
-  }
-  
-  func invokeBind(){
-    bsEmployeeViewModel?.bindEmployee = { [weak self] in
-      DispatchQueue.main.async {
-        self?.tblTableView.reloadData()
-      }
+    bsEmployeeViewModel?.setup(tblTableView)
+    bsEmployeeViewModel?.bindEmployee = {
+      self.setDataSource()
     }
   }
+  
+  func setDataSource(){
+    self.dataSourceGeneric = GenericDataSource("Cell", bsEmployeeViewModel?.arrData, { cell, data  in
+      cell.textLabel?.text = data.strName
+    }, { data in
+      print("Selected ",data)
+    })
+    
+    
+    DispatchQueue.main.async {
+      self.tblTableView.dataSource = self.dataSourceGeneric
+      self.tblTableView.delegate = self.dataSourceGeneric
+      self.tblTableView.reloadData()
+    }
+    
+  }
+
+  
+  
   
 }
